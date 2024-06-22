@@ -93,7 +93,7 @@ var bodModalBlock = function(){
 		if (this.$trigger.hasClass('type_selector')) {
 			var triggerSelector = this.$trigger.attr('data-selector');
 			if (triggerSelector) {
-				$('.' + triggerSelector).css('cursor','pointer').on('click', this.show); // attach click event
+				$('.' + triggerSelector).css('cursor','pointer').on('click', () => this.show()); // attach click event
 			}
 		} else if (this.$trigger.hasClass('type_load')) {
 			// we have show on page load
@@ -136,7 +136,7 @@ var bodModalBlock = function(){
 			}
 
 		} else { // must be button, text, or image trigger
-			this.$trigger.on('click', this.show); // attach click event
+			this.$trigger.on('click', () => this.show()); // attach click event
 		}
 
 		// setup the overlay and content wrap, put them into a jquery object and 
